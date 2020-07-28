@@ -5,14 +5,11 @@ WORKDIR /work
 COPY requirements.txt /work/requirements.txt
 
 RUN pip install -U pip && \
-    pip install -r requirements.txt
+    pip install --no-cache-dir -r requirements.txt
 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
-    jupyter labextension install @jupyter/toc && \
-    jupyter labextension install @jupyterlab/git && \
-    pip install jupyterlab-git && \
-    jupyter serverextension enable --py jupyterlab_git && \
-    jupyter lab build
+    jupyter labextension install @lckr/jupyterlab_variableinspector && \
+    jupyter labextension install @jupyterlab/toc
 
 EXPOSE 8888
 
