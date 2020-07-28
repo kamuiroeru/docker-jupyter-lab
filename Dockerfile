@@ -7,9 +7,9 @@ COPY requirements.txt /work/requirements.txt
 RUN pip install -U pip && \
     pip install --no-cache-dir -r requirements.txt
 
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
-    jupyter labextension install @lckr/jupyterlab_variableinspector && \
-    jupyter labextension install @jupyterlab/toc
+#RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
+#    jupyter labextension install @lckr/jupyterlab_variableinspector && \
+#    jupyter labextension install @jupyterlab/toc
 
 EXPOSE 8888
 
