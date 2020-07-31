@@ -9,15 +9,15 @@ RUN pip install -U pip && \
 
 RUN conda clean --all && \
     conda update conda && \
-    conda install -c conda-forge nodejs && \
-    conda install -c conda-forge python-language-server r-languageserver
+    conda install -c conda-forge nodejs
 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
     jupyter labextension install @lckr/jupyterlab_variableinspector && \
     jupyter labextension install @jupyterlab/toc && \
     jupyter labextension install @jupyterlab/git && \
-    jupyter serverextension enable --py jupyterlab_git && \
-    jupyter labextension install @krassowski/jupyterlab-lsp
+    jupyter serverextension enable --py jupyterlab_git
+
+
 
 EXPOSE 8888
 
