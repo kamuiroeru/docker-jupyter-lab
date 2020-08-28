@@ -1,5 +1,5 @@
-xgboost
-lightgbm
+#xgboost
+#lightgbm
 lxml
 html5lib
 beautifulsoup4
@@ -8,3 +8,4 @@ requests-html
 selenium
 chromedriver_binary
 keras
+jupyterlab-git
