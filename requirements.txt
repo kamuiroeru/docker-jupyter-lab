@@ -3,4 +3,8 @@ lightgbm
 lxml
 html5lib
 beautifulsoup4
+jupyterlab-git
 requests-html
+selenium
+chromedriver_binary
+keras
