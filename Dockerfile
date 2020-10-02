@@ -13,12 +13,15 @@ RUN pip install -U pip && \
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
     jupyter labextension install @jupyterlab/toc && \
     jupyter labextension install @jupyterlab/git && \
-    jupyter serverextension enable --py jupyterlab_git && \
-    wget https://linux.kite.com/linux/current/kite-installer && \
-    sed 's/"--no-launch"//g' current && \
-    ./current --install && \
-    rm -fr ./current && \
-    jupyter labextension install "@kiteco/jupyterlab-kite" --minimize=False && \
+    jupyter serverextension enable --py jupyterlab_git
+
+RUN cd && \
+    echo $PWD && \
+    wget https://linux.kite.com/dls/linux/current && \
+    chmod 777 current && \
+    sed -i 's/"--no-launch"//g' current > /dev/null && \
+    ./current --install ./kite-installer && \
+    jupyter labextension install @kiteco/jupyterlab-kite --minimize=False && \
     jupyter lab build --minimize=False
 
 EXPOSE 8888
