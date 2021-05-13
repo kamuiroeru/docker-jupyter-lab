@@ -1,12 +1,12 @@
-#xgboost
-#lightgbm
-#lxml
-#html5lib
-#beautifulsoup4
+# xgboost
+# lightgbm
+# lxml
+# html5lib
+# beautifulsoup4
 # jupyterlab==2.2.0
-#requests-html
-#selenium
-#chromedriver_binary
-#keras
+# requests-html
+# selenium
+# chromedriver_binary
+# keras
 jupyterlab-git
 jupyter-kite

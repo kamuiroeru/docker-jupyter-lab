@@ -6,6 +6,7 @@ COPY requirements.txt /work/requirements.txt
 
 RUN conda update conda && \
     conda install -c conda-forge nodejs jupyterlab==2.2.0 && \
+    conda install -c conda-forge ipywidgets ipympl && \
     conda clean --all
 
 RUN pip install --upgrade pip && \
@@ -22,6 +23,7 @@ RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
     jupyter labextension install @jupyterlab/git && \
     jupyter serverextension enable --py jupyterlab_git && \
     jupyter labextension install @kiteco/jupyterlab-kite --minimize=False && \
+    jupyter labextension install jupyter-matplotlib && \
     jupyter labextension update --all --minimize=False && \
     jupyter lab build --minimize=False
 
